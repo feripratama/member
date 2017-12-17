@@ -1,0 +1,1 @@
+This is demo view file for Bantenprov\Member package using blade template
