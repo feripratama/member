@@ -38,8 +38,7 @@ class MemberController extends Controller
 
         $users = $this->userModel->all();
 
-        return $users;
-        //return view('member::member.create',compact('users'));
+        return $users;        
     }
 
     public function show($id)
