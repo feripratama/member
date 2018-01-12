@@ -16,7 +16,6 @@ class CreateMemberTable extends Migration
         Schema::create('member', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            //$table->string('full_name',191);
             $table->softDeletes();
             $table->timestamps();
         });

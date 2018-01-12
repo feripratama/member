@@ -27,7 +27,7 @@ class MemberServiceProvider extends ServiceProvider
     public function boot()
     {
         // Bootstrap handles
-        $this->routeHandle();
+        //$this->routeHandle();
         $this->configHandle();
         $this->langHandle();
         $this->viewHandle();
@@ -118,7 +118,7 @@ class MemberServiceProvider extends ServiceProvider
     {
         $packageViewsPath = __DIR__.'/resources/views';
 
-        $this->loadViewsFrom($packageViewsPath, 'member');
+        //$this->loadViewsFrom($packageViewsPath, 'member');
 
         $this->publishes([
             $packageViewsPath => resource_path('views/vendor/member'),
@@ -148,10 +148,10 @@ class MemberServiceProvider extends ServiceProvider
     {
         $packageMigrationsPath = __DIR__.'/database/migrations';
 
-        $this->loadMigrationsFrom($packageMigrationsPath);
+        //$this->loadMigrationsFrom($packageMigrationsPath);
 
         $this->publishes([
             $packageMigrationsPath => database_path('migrations')
-        ], 'migrations');
+        ], 'member-migrations');
     }
 }
