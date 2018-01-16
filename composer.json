@@ -20,5 +20,5 @@
             "Bantenprov\\Member\\": "src"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
