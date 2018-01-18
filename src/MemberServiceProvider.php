@@ -118,11 +118,11 @@ class MemberServiceProvider extends ServiceProvider
     {
         $packageViewsPath = __DIR__.'/resources/views';
 
-        //$this->loadViewsFrom($packageViewsPath, 'member');
+        $this->loadViewsFrom($packageViewsPath, 'member');
 
         $this->publishes([
-            $packageViewsPath => resource_path('views/vendor/member'),
-        ], 'views');
+            $packageViewsPath => resource_path('views/vendor'),
+        ], 'member-views');
     }
 
     /**
@@ -155,3 +155,4 @@ class MemberServiceProvider extends ServiceProvider
         ], 'member-migrations');
     }
 }
+

@@ -35,7 +35,7 @@
     </div>
 @endif
 @if(session()->has('message'))
-    <div class="alert alert-success">
+    <div class="alert alert-danger">
         <ul style="padding:0;">
             <li>{{ session()->get('message') }}</li>
         </ul>
@@ -48,7 +48,7 @@
         <div class="panel ">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <i class="ti-pencil"></i> Form add new member
+                    <i class="ti-pencil"></i> Form edit member
                 </h3>
                 <span class="pull-right">
                     <i class="fa fa-fw ti-angle-up clickable"></i>
@@ -56,7 +56,7 @@
             </div>
             <div class="panel-body">
                 {{--  <form action="#" class="form-horizontal">  --}}
-                {!! Form::open(['route' => 'taskManagementMemberStore','method' => 'post','class' => 'form-horizontal']) !!}  
+                {!! Form::open(['route' => ['taskManagementMemberUpdate',$member->id],'method' => 'post','class' => 'form-horizontal']) !!}  
                     <div class="form-body">
                         <div class="form-group m-t-10">
                             <label for="inputUsername1" class="col-sm-3 control-label">
@@ -70,7 +70,7 @@
                                     <select id="user" name="user_id" class="form-control">
                                         <option value="" selected disabled>-Select User-</option>
                                         @foreach($users as $user)
-                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            <option value="{{ $user->id }}" {{ ($user->id == $member->id) ? 'selected' : '' }}>{{ $user->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -80,7 +80,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-offset-3 col-sm-9">
-                                {!! Form::submit('submit',['class' => 'btn btn-primary']) !!}
+                                {!! Form::submit('update',['class' => 'btn btn-primary']) !!}
                                 &nbsp;
                                 <button type="reset" class="btn btn-default bttn_reset">
                                     Reset
