@@ -69,9 +69,13 @@ class MemberController extends Controller
             return redirect()->back()->with('message','This user already register as staf !');
         }
 
-        $this->memberModel->create($req);
+        // $this->memberModel->create($req);
 
-        return redirect()->back()->with('message','Add data success');
+        // return redirect()->back()->with('message','Add data success');
+
+        $member_new_add = $this->memberModel->create($req);
+
+        return redirect()->route('userManagementShow',$member_new_add->getUser->id)->with('message','Add data success, Change Role to Member');
     }
 
     public function edit($id)
